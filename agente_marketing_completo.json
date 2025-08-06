@@ -1,0 +1,135 @@
+{
+  "proyecto": {
+    "nombre": "Agente de Marketing Automático",
+    "version": "1.0.0",
+    "descripcion": "Agente automático para análisis de competencia y generación de contenido en redes sociales",
+    "autor": "Marketing Agent Team",
+    "fecha_creacion": "2024-12-23"
+  },
+  "estructura_proyecto": {
+    "directorios": [
+      "src/",
+      "data/",
+      "logs/",
+      "media_storage/",
+      "generated_content/",
+      "config/"
+    ],
+    "archivos_principales": [
+      "main.py",
+      "requirements.txt",
+      ".env",
+      "README.md",
+      "agente_marketing_completo.json"
+    ]
+  },
+  "archivos": {
+    "requirements.txt": "# Web scraping y automatización\nselenium==4.15.2\nbeautifulsoup4==4.12.2\nrequests==2.31.0\npandas==2.1.3\nopenpyxl==3.1.2\n\n# Redes sociales\nfacebook-sdk==3.1.0\ninstagrapi==2.0.0\npython-instagram==1.3.2\n\n# IA y procesamiento de texto\nopenai==1.3.5\ntransformers==4.35.2\ntorch==2.1.1\npillow==10.1.0\nopencv-python==4.8.1.78\n\n# Programación de tareas\nschedule==1.2.0\npython-crontab==3.0.0\n\n# Configuración y logging\npython-dotenv==1.0.0\npyyaml==6.0.1\nloguru==0.7.2\n\n# Utilidades\npython-dateutil==2.8.2\npytz==2023.3\nretry==0.9.2\ntqdm==4.66.1\n\n# API y webhook\nflask==3.0.0\nfastapi==0.104.1\nuvicorn==0.24.0\n\n# Análisis de imágenes\npytesseract==0.3.10\n\n# Base de datos local\nsqlite3",
+    
+    ".env": "# Configuración del Agente de Marketing\nAGENT_NAME=AgenteMK_v1.0\n\n# OpenAI API (para generación de contenido)\nOPENAI_API_KEY=sk-your-openai-api-key-here\n\n# Facebook API\nFACEBOOK_ACCESS_TOKEN=your-facebook-access-token\nFACEBOOK_PAGE_ID=your-facebook-page-id\nFACEBOOK_APP_ID=your-facebook-app-id\nFACEBOOK_APP_SECRET=your-facebook-app-secret\n\n# Instagram\nINSTAGRAM_USERNAME=your-instagram-username\nINSTAGRAM_PASSWORD=your-instagram-password\n\n# Configuración de horarios (formato 24h)\nFACEBOOK_POST_TIME=09:00\nINSTAGRAM_POST_TIMES=09:00,14:00,19:00\n\n# Configuración del scraping\nSCRAPING_INTERVAL_HOURS=2\nMAX_POSTS_TO_ANALYZE=3\nHEADLESS_BROWSER=true\n\n# Base de datos\nDATABASE_PATH=./data/marketing_agent.db\n\n# Logging\nLOG_LEVEL=INFO\nLOG_FILE=./logs/marketing_agent.log\n\n# Configuración de contenido\nCONTENT_STYLE=profesional\nBRAND_VOICE=amigable_y_profesional\nTARGET_AUDIENCE=jovenes_adultos_25_45\n\n# Paths importantes\nEXCEL_FILE_PATH=./data/competidores.xlsx\nMEDIA_STORAGE_PATH=./media_storage\nGENERATED_CONTENT_PATH=./generated_content"
+  },
+  "funcionalidades": [
+    "Análisis automático de competencia en Facebook e Instagram",
+    "Scraping de contenido público con Selenium y BeautifulSoup",
+    "Análisis de hashtags, emojis y patrones de éxito",
+    "Generación de contenido con OpenAI GPT",
+    "Publicación automática programada",
+    "Sistema de monitoreo y alertas completo",
+    "Configuración segura con encriptación de credenciales",
+    "Programación de tareas con dependencias",
+    "Análisis de imágenes y colores dominantes",
+    "Métricas de engagement y rendimiento",
+    "Sistema de logs estructurados",
+    "Health checks automáticos",
+    "Dashboard de estado en tiempo real"
+  ],
+  "instalacion": {
+    "prerequisitos": [
+      "Python 3.8+",
+      "Google Chrome/Chromium",
+      "API Key de OpenAI",
+      "Cuentas de Facebook/Instagram (opcional)"
+    ],
+    "pasos": [
+      "pip install -r requirements.txt",
+      "python main.py --setup",
+      "Configurar credenciales en .env",
+      "Editar data/competidores.xlsx con competidores",
+      "python main.py (modo interactivo) o python main.py --daemon"
+    ]
+  },
+  "comandos": {
+    "python main.py": "Ejecutar en modo interactivo",
+    "python main.py --daemon": "Ejecutar en modo automático background",
+    "python main.py --setup": "Configuración inicial del agente",
+    "python main.py --test": "Ejecutar pruebas del sistema"
+  },
+  "apis_integradas": {
+    "OpenAI GPT": {
+      "proposito": "Generación de contenido inteligente",
+      "requerido": true,
+      "configuracion": "OPENAI_API_KEY en .env"
+    },
+    "Facebook Graph API": {
+      "proposito": "Publicación automática en Facebook",
+      "requerido": false,
+      "configuracion": "Variables FACEBOOK_* en .env"
+    },
+    "Instagram Basic Display": {
+      "proposito": "Publicación automática en Instagram",
+      "requerido": false,
+      "configuracion": "INSTAGRAM_USERNAME y INSTAGRAM_PASSWORD en .env"
+    }
+  },
+  "arquitectura": {
+    "main.py": "Aplicación principal y orquestador",
+    "excel_reader.py": "Lectura y gestión de competidores",
+    "social_scraper.py": "Scraping de redes sociales",
+    "content_analyzer.py": "Análisis de contenido e insights",
+    "content_generator.py": "Generación de contenido con IA",
+    "social_publisher.py": "Publicación automática",
+    "scheduler.py": "Programación y ejecución de tareas",
+    "config_manager.py": "Gestión de configuración segura",
+    "monitoring.py": "Sistema de monitoreo y logging"
+  },
+  "flujo_trabajo": [
+    "1. Leer lista de competidores desde Excel",
+    "2. Scraping de páginas públicas de Facebook/Instagram",
+    "3. Análisis de contenido extraído (hashtags, temas, engagement)",
+    "4. Generación de contenido mejorado con IA",
+    "5. Publicación automática en horarios programados",
+    "6. Monitoreo y alertas en tiempo real",
+    "7. Repetir ciclo según configuración"
+  ],
+  "seguridad": [
+    "Credenciales encriptadas con Fernet",
+    "Variables de entorno para datos sensibles",
+    "Validación estricta de configuración",
+    "Logs estructurados sin información confidencial",
+    "Gestión segura de sesiones de APIs",
+    "Rotación automática de tokens cuando sea posible"
+  ],
+  "monitoring": [
+    "Logs estructurados con Loguru",
+    "Métricas del sistema (CPU, memoria, disco)",
+    "Health checks automáticos",
+    "Alertas por email/webhook",
+    "Dashboard de estado en tiempo real",
+    "Tracking de errores y recuperación automática"
+  ],
+  "configuracion_avanzada": {
+    "horarios_personalizados": "Configurar en .env FACEBOOK_POST_TIME e INSTAGRAM_POST_TIMES",
+    "voz_de_marca": "Personalizar BRAND_VOICE y TARGET_AUDIENCE",
+    "intervalos_scraping": "Ajustar SCRAPING_INTERVAL_HOURS",
+    "nivel_logging": "Modificar LOG_LEVEL (DEBUG, INFO, WARNING, ERROR)",
+    "reintetos_automaticos": "Configurado por defecto con backoff exponencial"
+  },
+  "troubleshooting": {
+    "chrome_not_found": "Instalar Google Chrome o Chromium",
+    "api_rate_limits": "El agente maneja automáticamente con delays",
+    "login_instagram_failed": "Verificar credenciales y 2FA deshabilitado",
+    "openai_quota_exceeded": "Verificar límites de API y billing",
+    "posts_not_found": "Verificar que las páginas sean públicas"
+  },
+  "licencia": "MIT License - Uso libre para fines comerciales y no comerciales"
+}
